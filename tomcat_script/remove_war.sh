@@ -3,7 +3,7 @@
 #--------------------------------------------------------------------#
 # Script for removing war & valme directory from a single tomcate    #
 #--------------------------------------------------------------------#
-user_name="srvvalmetpdm"
+user_name="srvtestpdm"
 app_server_name="AppServer6"
 tomcat_port_number="8686"
 suffix="$(date +%Y)-$(date +%m)-$(date +%d)"
@@ -18,20 +18,20 @@ if [ "$TOMCATPORT" = "" ]; then
     
      #Backup EIF log
      cd /apps/tomcat/$user_name/$app_server_name/apache-tomcat-9.0.45/logs/
-     tar -czvf  eif_${tomcat_port_number}_${suffix}.tar.gz /apps/tomcat/$user_name/$app_server_name/apache-tomcat-9.0.45/webapps/valmet/eif/
+     tar -czvf  eif_${tomcat_port_number}_${suffix}.tar.gz /apps/tomcat/$user_name/$app_server_name/apache-tomcat-9.0.45/webapps/test/eif/
      
      cd /apps/tomcat/$user_name/$app_server_name/apache-tomcat-9.0.45/webapps/
 
-     rm -rf valmet
-     printf "Valmet directory has been deleted successfully from $app_server_name.\n"
+     rm -rf test
+     printf "test directory has been deleted successfully from $app_server_name.\n"
 
-     rm -rf valmet.war
+     rm -rf test.war
      printf "war file has been deleted successfully from $app_server_name.\n"
 
      cd /apps/tomcat/$user_name/testscripts
      ./clear_cache.sh
 
 else
-    printf "Tomcat server $tomcat_port_number is up and running. Not removing war and valmet directory. \n\n"
+    printf "Tomcat server $tomcat_port_number is up and running. Not removing war and test directory. \n\n"
 fi
 
