@@ -3,7 +3,7 @@
 #--------------------------------------------------------------------#
 # Script for removing war & valme directory from a single tomcate    #
 #--------------------------------------------------------------------#
-user_name="srvtestpdm"
+user_name="srvtest"
 app_server_name="AppServer6"
 tomcat_port_number="8686"
 suffix="$(date +%Y)-$(date +%m)-$(date +%d)"
